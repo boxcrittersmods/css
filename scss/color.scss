@@ -3,6 +3,9 @@
 		background-color: var(--color-#{$name});
 	}
 	.text-#{$name} {
-		color: var(--color-#{$name});
+		&,
+		a {
+			color: var(--color-#{$name});
+		}
 	}
 }

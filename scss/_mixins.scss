@@ -1,22 +1,22 @@
-@mixin device($name) {
+@mixin device($name, $minMax: min) {
 	@if $name == mobile {
 		@media (max-width: 599px) {
 			@content;
 		}
 	} @else if $name == tablet-portrait-up {
-		@media (min-width: 600px) {
+		@media (#{$minMax}-width: 600px) {
 			@content;
 		}
 	} @else if $name == tablet-landscape-up {
-		@media (min-width: 900px) {
+		@media (#{$minMax}-width: 900px) {
 			@content;
 		}
 	} @else if $name == desktop-up {
-		@media (min-width: 1200px) {
+		@media (#{$minMax}-width: 1200px) {
 			@content;
 		}
 	} @else if $name == big-desktop-up {
-		@media (min-width: 1800px) {
+		@media (#{$minMax}-width: 1800px) {
 			@content;
 		}
 	}

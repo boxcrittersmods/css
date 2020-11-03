@@ -6,7 +6,7 @@ const gulp = require("gulp"),
 	css = () => {
 		return gulp.src("scss/main.scss")
 			//.pipe(sourcemaps.init())
-			//.pipe(sass({ outputStyle: "compressed" }))
+			//.pipe(sass())
 			.pipe(sass({ outputStyle: "compressed" }))
 			.pipe(concat("bcmc.min.css"))
 			//.pipe(sourcemaps.write({ sourceRoot: "../scss" }))

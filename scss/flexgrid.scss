@@ -1,0 +1,60 @@
+@use "sass:math";
+@function lcm($a, $b) {
+	$a: abs($a);
+	$b: abs($b);
+	@if $b>$a {
+		$temp: $a;
+		$a: $b;
+		$b: $temp;
+	}
+	@while $a != 0 and $b != 0 {
+		$a: $a%$b;
+		@if $a!=0 {
+			$b: $b%$a;
+		}
+	}
+	@return max($a, $b);
+}
+.row {
+	display: flex;
+
+	@for $rowCols from $columnCount through 1 {
+		@for $colSpan from $rowCols through 1 {
+			$lcm: lcm($rowCols, $colSpan);
+			.col-#{$colSpan}-#{$rowCols} {
+				@if $lcm!=1 {
+					@extend .col-#{$colSpan/$lcm}-#{$rowCols/$lcm};
+				} @else {
+					@extend %col;
+					width: percentage($colSpan/$rowCols);
+				}
+			}
+		}
+		.col-#{$rowCols} {
+			@extend .col-#{$rowCols}-#{$columnCount};
+		}
+	}
+
+	.col {
+		@extend %col;
+		flex: 1;
+	}
+
+	@include device(mobile) {
+		flex-flow: column;
+
+		%col {
+			width: 100%;
+		}
+	}
+}
+
+%content {
+	max-width: 100%;
+	width: $contentWidth;
+	margin-left: auto;
+	margin-right: auto;
+}
+.content {
+	@extend %content;
+}
