@@ -1,0 +1,8 @@
+@include forEachColor() using ($name, $value) {
+	.bg-#{$name} {
+		background-color: var(--color-#{$name});
+	}
+	.text-#{$name} {
+		color: var(--color-#{$name});
+	}
+}

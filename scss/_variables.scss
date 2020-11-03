@@ -1,0 +1,22 @@
+$pallette: (
+	"red": #cc2b11,
+	"orange": #f39f2d,
+	"yellow": #f1d54c,
+	"lime": #a8d618,
+	"green": #55cc11,
+	"springGreen": #11cc88,
+	"cyan": #70e2e8,
+	"azure": #11b2cc,
+	"blue": #1155cc,
+	"purple": #8811cc,
+	"magenta": #cc1b22,
+	"rose": #cc1155,
+	"black": black,
+	"white": white,
+);
+
+:root {
+	@include forEachColor() using ($name, $value) {
+		--color-#{$name}: #{$value};
+	}
+}

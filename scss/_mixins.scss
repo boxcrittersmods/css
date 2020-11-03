@@ -1,0 +1,29 @@
+@mixin device($name) {
+	@if $name == mobile {
+		@media (max-width: 599px) {
+			@content;
+		}
+	} @else if $name == tablet-portrait-up {
+		@media (min-width: 600px) {
+			@content;
+		}
+	} @else if $name == tablet-landscape-up {
+		@media (min-width: 900px) {
+			@content;
+		}
+	} @else if $name == desktop-up {
+		@media (min-width: 1200px) {
+			@content;
+		}
+	} @else if $name == big-desktop-up {
+		@media (min-width: 1800px) {
+			@content;
+		}
+	}
+}
+
+@mixin forEachColor {
+	@each $name, $value in $pallette {
+		@content ($name,$value);
+	}
+}
