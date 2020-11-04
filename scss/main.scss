@@ -1,12 +1,12 @@
+//Setup
+@import "./variables";
+@import "./functions";
+@import "./mixins";
+
 //reset
 @import "./reset";
 
-//Setup
-@import "./mixins";
-@import "./variables";
-
 //CSS Basics
 @import "./style";
-@import "./color";
 @import "./flexgrid.scss";
 @import "./nav.scss";

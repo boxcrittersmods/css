@@ -8,8 +8,7 @@
 %burgerBar {
 	@extend %burgerElm;
 	height: 100%;
-	content: "";
-	position: absolute;
+	@include pseudo;
 }
 
 .burger {

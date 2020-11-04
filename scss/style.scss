@@ -1,34 +1,11 @@
-$emmet: (
-	"t": "top",
-	"r": "right",
-	"b": "bottom",
-	"l": "left",
-	"z": "z-index",
-	"w": "width",
-	"h": "height",
-	"maw": "max-width",
-	"mah": "max-height",
-	"miw": "min-width",
-	"mih": "min-height",
-	"m": "margin",
-	"mt": "margin-top",
-	"mr": "margin-right",
-	"mb": "margin-bottom",
-	"ml": "margin-left",
-	"p": "padding",
-	"pt": "padding-top",
-	"pr": "padding-right",
-	"pb": "padding-bottom",
-	"pl": "padding-left",
-);
-
-@each $abbriv, $key in $emmet {
-	.#{$abbriv}-auto {
-		#{$key}: auto;
+@each $name, $value in $colorPallette {
+	.bg-#{$name} {
+		background-color: var(--color-#{$name});
 	}
-	@for $v from 0 through 100 {
-		.#{$abbriv}-#{$v} {
-			#{$key}: percentage($v/100);
+	.text-#{$name} {
+		&,
+		a {
+			color: var(--color-#{$name});
 		}
 	}
 }

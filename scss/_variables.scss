@@ -1,4 +1,4 @@
-$pallette: (
+$colorPallette: (
 	"red": #cc2b11,
 	"orange": #f39f2d,
 	"yellow": #f1d54c,
@@ -16,7 +16,7 @@ $pallette: (
 );
 
 :root {
-	@include forEachColor() using ($name, $value) {
+	@each $name, $value in $colorPallette {
 		--color-#{$name}: #{$value};
 	}
 }

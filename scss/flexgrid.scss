@@ -1,22 +1,21 @@
-@use "sass:math";
-@function lcm($a, $b) {
-	$a: abs($a);
-	$b: abs($b);
-	@if $b>$a {
-		$temp: $a;
-		$a: $b;
-		$b: $temp;
-	}
-	@while $a != 0 and $b != 0 {
-		$a: $a%$b;
-		@if $a!=0 {
-			$b: $b%$a;
-		}
-	}
-	@return max($a, $b);
-}
-.row {
+%flex {
 	display: flex;
+}
+@each $dir in row row-reverse column column-reverse {
+	.f-#{$dir} {
+		@extend %flex;
+		flex-direction: $dir;
+	}
+}
+@each $wrap in nowrap wrap wrap-reverse {
+	.f-#{$wrap} {
+		@extend %flex;
+		flex-wrap: $wrap;
+	}
+}
+
+.row {
+	@extend %flex;
 
 	@for $rowCols from $columnCount through 1 {
 		@for $colSpan from $rowCols through 1 {
@@ -40,7 +39,7 @@
 		flex: 1;
 	}
 
-	@include device(mobile) {
+	@include mq(mobile, max) {
 		flex-flow: column;
 
 		%col {

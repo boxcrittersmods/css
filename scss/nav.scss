@@ -13,90 +13,71 @@ header {
 		width: auto;
 	}
 
-	@include forEachColor() using ($name, $value) {
+	@each $name, $value in $colorPallette {
 		&.bg-#{$name} nav {
-			background-color: var(--color-#{$name});
-			//background-color: var(--color-yellow);
+			@extend .bg-#{$name};
 		}
 	}
 	.content {
 		@extend .row;
 		position: relative;
 		z-index: 0;
-		@include device(tablet-portrait-up) {
+		@include mq(desktop) {
 			max-width: 97%;
-			& > * {
-				flex: 1;
-			}
+			justify-content: space-between;
 		}
-		@include device(mobile) {
+		@include mq(mobile) {
 			z-index: 5;
 			position: fixed;
 		}
 	}
 	.main {
-		width: 97%;
-		margin-left: auto;
-		margin-right: auto;
+		@extend %flex;
 		height: $headerHeight;
-		display: flex;
 		align-items: center;
-		* {
-			margin: $headerMargin;
+		justify-content: space-between;
+		width: 97%;
+		.branding {
+			@extend %flex;
+			align-items: center;
+			& > * {
+				margin: $headerMargin;
+			}
 		}
 
 		.btn-mobile {
 			@import "./burger.scss";
-			display: none;
+			@extend %flex;
+			flex-flow: column;
 			height: 64px;
 			width: 64px;
 			justify-content: center;
-			flex-flow: column;
 			padding: 16px;
+
+			@include mq(desktop) {
+				display: none;
+			}
 		}
 
-		@include device(mobile) {
-			// flex-direction: row-reverse;
-			// justify-content: flex-end;
-			img {
-				// display: none;
-			}
-			h1 {
-				flex: 1;
-			}
-			.btn-mobile {
-				display: flex;
-			}
+		@include mq(mobile) {
+			@include centerBlock;
 		}
 	}
 
-	.content,
-	nav,
-	nav * {
-		height: 100%;
-	}
 	nav {
 		flex: 1;
-	}
-
-	.dropdown {
-		position: fixed;
-		flex-flow: column;
-		top: calc($headerHeight - 2);
-		width: 20%;
-		height: 20%;
-		* {
-			height: 10%;
+		justify-content: flex-end;
+		& > * {
+			flex-basis: 10%;
 		}
 	}
 }
 nav {
 	@extend .row;
 	text-align: center;
-	align-items: stretch;
+	//align-items: stretch;
 	font-size: larger;
 	& > * {
-		@extend .col;
 		display: flex;
 		flex-flow: column;
 		justify-content: center;
