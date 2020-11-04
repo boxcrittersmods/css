@@ -1,5 +1,6 @@
 header {
 	$headerHeight: 64px;
+	$headerMargin: 0.125em;
 
 	height: $headerHeight;
 	position: relative;
@@ -41,7 +42,7 @@ header {
 		display: flex;
 		align-items: center;
 		* {
-			margin: 0.125em;
+			margin: $headerMargin;
 		}
 
 		.btn-mobile {
@@ -76,6 +77,17 @@ header {
 	}
 	nav {
 		flex: 1;
+	}
+
+	.dropdown {
+		position: fixed;
+		flex-flow: column;
+		top: calc($headerHeight - 2);
+		width: 20%;
+		height: 20%;
+		* {
+			height: 10%;
+		}
 	}
 }
 nav {
