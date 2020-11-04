@@ -11,9 +11,23 @@ $colorPallette: (
 	"purple": #8811cc,
 	"magenta": #cc1b22,
 	"rose": #cc1155,
-	"black": black,
-	"white": white,
+    "white": #fff,
+    "gray": #6c757d,
+   "gray-dark": #343a40
 );
+
+
+$colorPallette: map_merge($colorPallette,(
+    "primary":map_get($colorPallette, "blue"),
+    "secondary": map_get($colorPallette, "gray"),
+    "success": map_get($colorPallette,"green"),
+    "info":map_get($colorPallette, "azure"),
+    "warning": map_get($colorPallette,"yellow"),
+    "danger": map_get($colorPallette,"red"),
+    "light": #f8f9fa,
+    "dark": map_get($colorPallette,"gray-dark"),
+));
+
 
 :root {
 	@each $name, $value in $colorPallette {
