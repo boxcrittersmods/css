@@ -28,7 +28,7 @@
 	}
 }
 
-&.open .burger {
+%burgerContainer.open .burger {
 	background-color: transparent;
 
 	&::before {

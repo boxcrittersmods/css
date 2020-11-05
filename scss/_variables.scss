@@ -1,39 +1,99 @@
-$colorPallette: (
-	"red": #cc2b11,
-	"orange": #f39f2d,
-	"yellow": #f1d54c,
-	"lime": #a8d618,
-	"green": #55cc11,
-	"springGreen": #11cc88,
-	"cyan": #70e2e8,
-	"azure": #11b2cc,
-	"blue": #1155cc,
-	"purple": #8811cc,
-	"magenta": #cc1b22,
-	"rose": #cc1155,
-    "white": #fff,
-    "gray": #6c757d,
-   "gray-dark": #343a40
-);
+$colorChange: 50%;
+//Grey
+$black: black !default;
+$gray: #999999 !default;
+$gray-light: tint($gray, $colorChange) !default;
+$gray-dark: shade($gray, $colorChange) !default;
+$white: white !default;
 
+// Colors
+$red: #cc2b11 !default;
+$orange: #f39f2d !default;
+$yellow: #f1d54c !default;
+$lime: #a8d618 !default;
+$green: #55cc11 !default;
+$teal: #11cc88 !default;
+$cyan: #70e2e8 !default;
+$azure: #11b2cc !default;
+$blue: #1155cc !default;
+$purple: #8811cc !default;
+$magenta: #cc1b22 !default;
+$rose: #cc1155 !default;
 
-$colorPallette: map_merge($colorPallette,(
-    "primary":map_get($colorPallette, "blue"),
-    "secondary": map_get($colorPallette, "gray"),
-    "success": map_get($colorPallette,"green"),
-    "info":map_get($colorPallette, "azure"),
-    "warning": map_get($colorPallette,"yellow"),
-    "danger": map_get($colorPallette,"red"),
-    "light": #f8f9fa,
-    "dark": map_get($colorPallette,"gray-dark"),
-));
+$colors: (
+	"red": $red,
+	"orange": $orange,
+	"yellow": $yellow,
+	"lime": $lime,
+	"green": $green,
+	"teal": $teal,
+	"cyan": $cyan,
+	"azure": $azure,
+	"blue": $blue,
+	"purple": $purple,
+	"magenta": $magenta,
+	"rose": $rose,
+	"white": $white,
+	"gray-light": $gray-dark,
+	"gray": $gray,
+	"gray-dark": $gray-dark,
+) !default;
 
+$primary: $blue !default;
+$secondary: $gray !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $white !default;
+$dark: $black !default;
 
-:root {
-	@each $name, $value in $colorPallette {
-		--color-#{$name}: #{$value};
-	}
-}
+$theme-colors: (
+	"primary": $primary,
+	"secondary": $secondary,
+	"success": $success,
+	"info": $info,
+	"warning": $warning,
+	"danger": $danger,
+	"light": $light,
+	"dark": $dark,
+) !default;
 
+$all-colors: map-merge($colors, $theme-colors);
+
+$red-light: tint($red, $colorChange) !default;
+$red-dark: shade($red, $colorChange) !default;
+$orange-light: tint($orange, $colorChange) !default;
+$orange-dark: shade($orange, $colorChange) !default;
+$yellow-light: tint($yellow, $colorChange) !default;
+$yellow-dark: shade($yellow, $colorChange) !default;
+$lime-light: tint($lime, $colorChange) !default;
+$lime-dark: shade($lime, $colorChange) !default;
+$green-light: tint($green, $colorChange) !default;
+$green-dark: shade($green, $colorChange) !default;
+$teal-light: tint($teal, $colorChange) !default;
+$teal-dark: shade($teal, $colorChange) !default;
+$cyan-light: tint($cyan, $colorChange) !default;
+$cyan-dark: shade($cyan, $colorChange) !default;
+$azure-light: tint($azure, $colorChange) !default;
+$azure-dark: shade($azure, $colorChange) !default;
+$blue-light: tint($blue, $colorChange) !default;
+$blue-dark: shade($blue, $colorChange) !default;
+$purple-light: tint($purple, $colorChange) !default;
+$purple-dark: shade($purple, $colorChange) !default;
+$magenta-light: tint($magenta, $colorChange) !default;
+$magenta-dark: shade($magenta, $colorChange) !default;
+$rose-light: tint($rose, $colorChange) !default;
+$rose-dark: shade($rose, $colorChange) !default;
+
+//Responsivity
+$maxMobileWidth: 700px;
+
+//grid
 $columnCount: 12;
-$contentWidth: 1400px;
+$contentWidth: 1024px;
+
+//nav
+$headerHeight: 64px;
+$headerPadding: 8px;
+$brandingMargin: 0.125em;

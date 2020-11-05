@@ -1,0 +1,8 @@
+@each $name, $value in $all-colors {
+	.text-#{$name} {
+		@include textColor($name);
+	}
+	.bg-#{$name} {
+		@include bgColor($name);
+	}
+}

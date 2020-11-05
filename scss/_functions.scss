@@ -26,3 +26,23 @@
 	}
 }
 $z-indexes: ("outdated-browser", "modal", "site-header", "page-wrapper", "site-footer");
+
+@function tint($color, $percentage) {
+	@return mix(white, $color, $percentage);
+}
+@function shade($color, $percentage) {
+	@return mix(black, $color, $percentage);
+}
+
+@function getColor($color) {
+	@if map-has-key($all-colors, $color) {
+		@return map-get($all-colors, $color);
+	}
+	@return $color;
+}
+@function getColorCSS($color) {
+	@if map-has-key($all-colors, $color) {
+		@return var(--#{$color});
+	}
+	@return $color;
+}
