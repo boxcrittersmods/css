@@ -1,0 +1,19 @@
+%btn {
+	height: 48px;
+	padding: 16px;
+	display: block;
+
+	@each $name, $color in $all-colors {
+		&.bg-#{$name}:hover {
+			@include hover($color);
+		}
+	}
+}
+
+.btn {
+	display: inline-block;
+	@extend %btn;
+	border: {
+		radius: 20px;
+	}
+}

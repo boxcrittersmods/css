@@ -136,3 +136,14 @@
 		line-height: $lh;
 	}
 }
+
+@mixin center {
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+@mixin hover($color) {
+	background: shade(getColor($color), 20%);
+}

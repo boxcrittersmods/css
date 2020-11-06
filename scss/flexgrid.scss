@@ -1,19 +1,35 @@
+%flexbase {
+	flex-wrap: wrap;
+}
+
 %flex {
 	display: flex;
+	@extend %flexbase;
+}
+
+%flex-inline {
+	display: inline-flex;
+	@extend %flexbase;
 }
 
 [class^="f-"] {
 	@extend %flex;
 }
 
-@each $dir in row row-reverse column column-reverse {
-	.f-#{$dir} {
-		flex-direction: $dir;
-	}
+[class^="fi-"] {
+	@extend %flex-inline;
 }
-@each $wrap in nowrap wrap wrap-reverse {
-	.f-#{$wrap} {
-		flex-wrap: $wrap;
+.f,
+.fi {
+	@each $dir in row row-reverse column column-reverse {
+		&-#{$dir} {
+			flex-direction: $dir;
+		}
+	}
+	@each $wrap in nowrap wrap wrap-reverse {
+		&-#{$wrap} {
+			flex-wrap: $wrap;
+		}
 	}
 }
 

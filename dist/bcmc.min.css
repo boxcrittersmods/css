@@ -374,27 +374,18 @@ template {
   color: inherit;
 }
 
+a {
+  color: var(--color-blue);
+}
 a, a:link, a:visited {
   text-decoration: none;
-  color: var(--color-blue);
   font-weight: bold;
 }
 
 html,
 body {
-  width: 100%;
-  height: 100%;
-}
-
-img {
-  width: 100%;
-  height: auto;
-}
-
-.btn {
-  height: 48px;
-  padding: 16px;
-  display: inline-block;
+  width: 100vw;
+  height: 100vh;
 }
 
 .text-red {
@@ -402,7 +393,7 @@ img {
   border-color: var(--red);
 }
 
-.bg-red {
+.bg-red, header.bg-red nav {
   background-color: var(--red);
   color: var(--light);
   border-color: var(--light);
@@ -413,7 +404,7 @@ img {
   border-color: var(--orange);
 }
 
-.bg-orange {
+.bg-orange, header.bg-orange nav {
   background-color: var(--orange);
   color: var(--dark);
   border-color: var(--dark);
@@ -424,7 +415,7 @@ img {
   border-color: var(--yellow);
 }
 
-.bg-yellow {
+.bg-yellow, header.bg-yellow nav {
   background-color: var(--yellow);
   color: var(--dark);
   border-color: var(--dark);
@@ -435,7 +426,7 @@ img {
   border-color: var(--lime);
 }
 
-.bg-lime {
+.bg-lime, header.bg-lime nav {
   background-color: var(--lime);
   color: var(--light);
   border-color: var(--light);
@@ -446,7 +437,7 @@ img {
   border-color: var(--green);
 }
 
-.bg-green {
+.bg-green, header.bg-green nav {
   background-color: var(--green);
   color: var(--light);
   border-color: var(--light);
@@ -457,7 +448,7 @@ img {
   border-color: var(--teal);
 }
 
-.bg-teal {
+.bg-teal, header.bg-teal nav {
   background-color: var(--teal);
   color: var(--light);
   border-color: var(--light);
@@ -468,7 +459,7 @@ img {
   border-color: var(--cyan);
 }
 
-.bg-cyan {
+.bg-cyan, header.bg-cyan nav {
   background-color: var(--cyan);
   color: var(--dark);
   border-color: var(--dark);
@@ -479,7 +470,7 @@ img {
   border-color: var(--azure);
 }
 
-.bg-azure {
+.bg-azure, header.bg-azure nav {
   background-color: var(--azure);
   color: var(--light);
   border-color: var(--light);
@@ -490,7 +481,7 @@ img {
   border-color: var(--blue);
 }
 
-.bg-blue {
+.bg-blue, header.bg-blue nav {
   background-color: var(--blue);
   color: var(--light);
   border-color: var(--light);
@@ -501,7 +492,7 @@ img {
   border-color: var(--purple);
 }
 
-.bg-purple {
+.bg-purple, header.bg-purple nav {
   background-color: var(--purple);
   color: var(--light);
   border-color: var(--light);
@@ -512,7 +503,7 @@ img {
   border-color: var(--magenta);
 }
 
-.bg-magenta {
+.bg-magenta, header.bg-magenta nav {
   background-color: var(--magenta);
   color: var(--light);
   border-color: var(--light);
@@ -523,7 +514,7 @@ img {
   border-color: var(--rose);
 }
 
-.bg-rose {
+.bg-rose, header.bg-rose nav {
   background-color: var(--rose);
   color: var(--light);
   border-color: var(--light);
@@ -534,7 +525,7 @@ img {
   border-color: var(--white);
 }
 
-.bg-white {
+.bg-white, header.bg-white nav {
   background-color: var(--white);
   color: var(--dark);
   border-color: var(--dark);
@@ -545,7 +536,7 @@ img {
   border-color: var(--gray-light);
 }
 
-.bg-gray-light {
+.bg-gray-light, header.bg-gray-light nav {
   background-color: var(--gray-light);
   color: var(--light);
   border-color: var(--light);
@@ -556,7 +547,7 @@ img {
   border-color: var(--gray);
 }
 
-.bg-gray {
+.bg-gray, header.bg-gray nav {
   background-color: var(--gray);
   color: var(--dark);
   border-color: var(--dark);
@@ -567,7 +558,7 @@ img {
   border-color: var(--gray-dark);
 }
 
-.bg-gray-dark {
+.bg-gray-dark, header.bg-gray-dark nav {
   background-color: var(--gray-dark);
   color: var(--light);
   border-color: var(--light);
@@ -578,7 +569,7 @@ img {
   border-color: var(--primary);
 }
 
-.bg-primary {
+.bg-primary, header.bg-primary nav {
   background-color: var(--primary);
   color: var(--light);
   border-color: var(--light);
@@ -589,7 +580,7 @@ img {
   border-color: var(--secondary);
 }
 
-.bg-secondary {
+.bg-secondary, header.bg-secondary nav {
   background-color: var(--secondary);
   color: var(--dark);
   border-color: var(--dark);
@@ -600,7 +591,7 @@ img {
   border-color: var(--success);
 }
 
-.bg-success {
+.bg-success, header.bg-success nav {
   background-color: var(--success);
   color: var(--light);
   border-color: var(--light);
@@ -611,7 +602,7 @@ img {
   border-color: var(--info);
 }
 
-.bg-info {
+.bg-info, header.bg-info nav {
   background-color: var(--info);
   color: var(--dark);
   border-color: var(--dark);
@@ -622,7 +613,7 @@ img {
   border-color: var(--warning);
 }
 
-.bg-warning {
+.bg-warning, header.bg-warning nav {
   background-color: var(--warning);
   color: var(--dark);
   border-color: var(--dark);
@@ -633,7 +624,7 @@ img {
   border-color: var(--danger);
 }
 
-.bg-danger {
+.bg-danger, header.bg-danger nav {
   background-color: var(--danger);
   color: var(--light);
   border-color: var(--light);
@@ -644,7 +635,7 @@ img {
   border-color: var(--light);
 }
 
-.bg-light {
+.bg-light, header.bg-light nav {
   background-color: var(--light);
   color: var(--dark);
   border-color: var(--dark);
@@ -655,41 +646,133 @@ img {
   border-color: var(--dark);
 }
 
-.bg-dark {
+.bg-dark, header.bg-dark nav {
   background-color: var(--dark);
   color: var(--light);
   border-color: var(--light);
 }
 
-header .container, .row, [class^=f-] {
-  display: flex;
+nav li a, .btn {
+  height: 48px;
+  padding: 16px;
+  display: block;
+}
+nav li a.bg-red:hover, .bg-red.btn:hover, header.bg-red nav.btn:hover {
+  background: #a3220e;
+}
+nav li a.bg-orange:hover, .bg-orange.btn:hover, header.bg-orange nav.btn:hover {
+  background: #c27f24;
+}
+nav li a.bg-yellow:hover, .bg-yellow.btn:hover, header.bg-yellow nav.btn:hover {
+  background: #c1aa3d;
+}
+nav li a.bg-lime:hover, .bg-lime.btn:hover, header.bg-lime nav.btn:hover {
+  background: #86ab13;
+}
+nav li a.bg-green:hover, .bg-green.btn:hover, header.bg-green nav.btn:hover {
+  background: #44a30e;
+}
+nav li a.bg-teal:hover, .bg-teal.btn:hover, header.bg-teal nav.btn:hover {
+  background: #0ea36d;
+}
+nav li a.bg-cyan:hover, .bg-cyan.btn:hover, header.bg-cyan nav.btn:hover {
+  background: #5ab5ba;
+}
+nav li a.bg-azure:hover, .bg-azure.btn:hover, header.bg-azure nav.btn:hover {
+  background: #0e8ea3;
+}
+nav li a.bg-blue:hover, .bg-blue.btn:hover, header.bg-blue nav.btn:hover {
+  background: #0e44a3;
+}
+nav li a.bg-purple:hover, .bg-purple.btn:hover, header.bg-purple nav.btn:hover {
+  background: #6d0ea3;
+}
+nav li a.bg-magenta:hover, .bg-magenta.btn:hover, header.bg-magenta nav.btn:hover {
+  background: #a3161b;
+}
+nav li a.bg-rose:hover, .bg-rose.btn:hover, header.bg-rose nav.btn:hover {
+  background: #a30e44;
+}
+nav li a.bg-white:hover, .bg-white.btn:hover, header.bg-white nav.btn:hover {
+  background: #cccccc;
+}
+nav li a.bg-gray-light:hover, .bg-gray-light.btn:hover, header.bg-gray-light nav.btn:hover {
+  background: #3e3e3e;
+}
+nav li a.bg-gray:hover, .bg-gray.btn:hover, header.bg-gray nav.btn:hover {
+  background: #7a7a7a;
+}
+nav li a.bg-gray-dark:hover, .bg-gray-dark.btn:hover, header.bg-gray-dark nav.btn:hover {
+  background: #3e3e3e;
+}
+nav li a.bg-primary:hover, .bg-primary.btn:hover, header.bg-primary nav.btn:hover {
+  background: #0e44a3;
+}
+nav li a.bg-secondary:hover, .bg-secondary.btn:hover, header.bg-secondary nav.btn:hover {
+  background: #7a7a7a;
+}
+nav li a.bg-success:hover, .bg-success.btn:hover, header.bg-success nav.btn:hover {
+  background: #44a30e;
+}
+nav li a.bg-info:hover, .bg-info.btn:hover, header.bg-info nav.btn:hover {
+  background: #5ab5ba;
+}
+nav li a.bg-warning:hover, .bg-warning.btn:hover, header.bg-warning nav.btn:hover {
+  background: #c1aa3d;
+}
+nav li a.bg-danger:hover, .bg-danger.btn:hover, header.bg-danger nav.btn:hover {
+  background: #a3220e;
+}
+nav li a.bg-light:hover, .bg-light.btn:hover, header.bg-light nav.btn:hover {
+  background: #cccccc;
+}
+nav li a.bg-dark:hover, .bg-dark.btn:hover, header.bg-dark nav.btn:hover {
+  background: black;
 }
 
-.f-row {
-  flex-direction: row;
+.btn {
+  display: inline-block;
+  border-radius: 20px;
 }
 
-.f-row-reverse {
-  flex-direction: row-reverse;
-}
-
-.f-column {
-  flex-direction: column;
-}
-
-.f-column-reverse {
-  flex-direction: column-reverse;
-}
-
-.f-nowrap {
-  flex-wrap: nowrap;
-}
-
-.f-wrap {
+nav ul, [class^=fi-], body, .row, header .container, [class^=f-] {
   flex-wrap: wrap;
 }
 
-.f-wrap-reverse {
+body, .row, header .container, [class^=f-] {
+  display: flex;
+}
+
+nav ul, [class^=fi-] {
+  display: inline-flex;
+}
+
+.f-row,
+.fi-row {
+  flex-direction: row;
+}
+.f-row-reverse,
+.fi-row-reverse {
+  flex-direction: row-reverse;
+}
+.f-column,
+.fi-column {
+  flex-direction: column;
+}
+.f-column-reverse,
+.fi-column-reverse {
+  flex-direction: column-reverse;
+}
+.f-nowrap,
+.fi-nowrap {
+  flex-wrap: nowrap;
+}
+.f-wrap,
+.fi-wrap {
+  flex-wrap: wrap;
+}
+.f-wrap-reverse,
+.fi-wrap-reverse {
   flex-wrap: wrap-reverse;
 }
 
@@ -701,7 +784,7 @@ header .container, .row, [class^=f-] {
 }
 
 @media only screen and (max-width: 700px) {
-  .row {
+  .row, header .container {
     flex-flow: column;
   }
 }
@@ -916,48 +999,416 @@ header .container, .row, [class^=f-] {
   transform: translateY(300%);
 }
 
+header .site-head .open.btn-mobile .burger {
+  background-color: transparent;
+}
+header .site-head .open.btn-mobile .burger::before {
+  transform: rotate(45deg);
+}
+header .site-head .open.btn-mobile .burger::after {
+  transform: rotate(-45deg);
+}
+
+.burger, .burger::before, .burger::after {
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.burger::before, .burger::after {
+  height: 100%;
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.burger {
+  height: 10%;
+  position: relative;
+}
+.burger::before {
+  transform: translateY(-300%);
+}
+.burger::after {
+  transform: translateY(300%);
+}
+
+header .site-head .open.btn-mobile .burger {
+  background-color: transparent;
+}
+header .site-head .open.btn-mobile .burger::before {
+  transform: rotate(45deg);
+}
+header .site-head .open.btn-mobile .burger::after {
+  transform: rotate(-45deg);
+}
+
+nav {
+  display: inline-block;
+  text-align: center;
+}
+nav .b {
+  display: block;
+}
 nav ul {
+  align-items: stretch;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 nav li a {
-  width: 100%;
-  height: 100%;
+  line-height: 100%;
 }
-nav li a:hover {
-  background-color: var(--dark);
-  color: var(--light);
-  border-color: var(--light);
+nav.nav-vertical ul {
+  flex-flow: column;
 }
-nav li.active a,
-nav li a.active {
-  background-color: var(--success);
-  color: var(--light);
-  border-color: var(--light);
+nav.bg-red li.active a, header.bg-red nav li.active a,
+nav.bg-red a.active,
+header.bg-red nav a.active,
+nav.bg-red a:active,
+header.bg-red nav a:active,
+nav.bg-red a:hover,
+header.bg-red nav a:hover {
+  background: #a3220e;
 }
-nav.hor li {
-  display: inline;
+nav.bg-orange li.active a, header.bg-orange nav li.active a,
+nav.bg-orange a.active,
+header.bg-orange nav a.active,
+nav.bg-orange a:active,
+header.bg-orange nav a:active,
+nav.bg-orange a:hover,
+header.bg-orange nav a:hover {
+  background: #c27f24;
+}
+nav.bg-yellow li.active a, header.bg-yellow nav li.active a,
+nav.bg-yellow a.active,
+header.bg-yellow nav a.active,
+nav.bg-yellow a:active,
+header.bg-yellow nav a:active,
+nav.bg-yellow a:hover,
+header.bg-yellow nav a:hover {
+  background: #c1aa3d;
+}
+nav.bg-lime li.active a, header.bg-lime nav li.active a,
+nav.bg-lime a.active,
+header.bg-lime nav a.active,
+nav.bg-lime a:active,
+header.bg-lime nav a:active,
+nav.bg-lime a:hover,
+header.bg-lime nav a:hover {
+  background: #86ab13;
+}
+nav.bg-green li.active a, header.bg-green nav li.active a,
+nav.bg-green a.active,
+header.bg-green nav a.active,
+nav.bg-green a:active,
+header.bg-green nav a:active,
+nav.bg-green a:hover,
+header.bg-green nav a:hover {
+  background: #44a30e;
+}
+nav.bg-teal li.active a, header.bg-teal nav li.active a,
+nav.bg-teal a.active,
+header.bg-teal nav a.active,
+nav.bg-teal a:active,
+header.bg-teal nav a:active,
+nav.bg-teal a:hover,
+header.bg-teal nav a:hover {
+  background: #0ea36d;
+}
+nav.bg-cyan li.active a, header.bg-cyan nav li.active a,
+nav.bg-cyan a.active,
+header.bg-cyan nav a.active,
+nav.bg-cyan a:active,
+header.bg-cyan nav a:active,
+nav.bg-cyan a:hover,
+header.bg-cyan nav a:hover {
+  background: #5ab5ba;
+}
+nav.bg-azure li.active a, header.bg-azure nav li.active a,
+nav.bg-azure a.active,
+header.bg-azure nav a.active,
+nav.bg-azure a:active,
+header.bg-azure nav a:active,
+nav.bg-azure a:hover,
+header.bg-azure nav a:hover {
+  background: #0e8ea3;
+}
+nav.bg-blue li.active a, header.bg-blue nav li.active a,
+nav.bg-blue a.active,
+header.bg-blue nav a.active,
+nav.bg-blue a:active,
+header.bg-blue nav a:active,
+nav.bg-blue a:hover,
+header.bg-blue nav a:hover {
+  background: #0e44a3;
+}
+nav.bg-purple li.active a, header.bg-purple nav li.active a,
+nav.bg-purple a.active,
+header.bg-purple nav a.active,
+nav.bg-purple a:active,
+header.bg-purple nav a:active,
+nav.bg-purple a:hover,
+header.bg-purple nav a:hover {
+  background: #6d0ea3;
+}
+nav.bg-magenta li.active a, header.bg-magenta nav li.active a,
+nav.bg-magenta a.active,
+header.bg-magenta nav a.active,
+nav.bg-magenta a:active,
+header.bg-magenta nav a:active,
+nav.bg-magenta a:hover,
+header.bg-magenta nav a:hover {
+  background: #a3161b;
+}
+nav.bg-rose li.active a, header.bg-rose nav li.active a,
+nav.bg-rose a.active,
+header.bg-rose nav a.active,
+nav.bg-rose a:active,
+header.bg-rose nav a:active,
+nav.bg-rose a:hover,
+header.bg-rose nav a:hover {
+  background: #a30e44;
+}
+nav.bg-white li.active a, header.bg-white nav li.active a,
+nav.bg-white a.active,
+header.bg-white nav a.active,
+nav.bg-white a:active,
+header.bg-white nav a:active,
+nav.bg-white a:hover,
+header.bg-white nav a:hover {
+  background: #cccccc;
+}
+nav.bg-gray-light li.active a, header.bg-gray-light nav li.active a,
+nav.bg-gray-light a.active,
+header.bg-gray-light nav a.active,
+nav.bg-gray-light a:active,
+header.bg-gray-light nav a:active,
+nav.bg-gray-light a:hover,
+header.bg-gray-light nav a:hover {
+  background: #3e3e3e;
+}
+nav.bg-gray li.active a, header.bg-gray nav li.active a,
+nav.bg-gray a.active,
+header.bg-gray nav a.active,
+nav.bg-gray a:active,
+header.bg-gray nav a:active,
+nav.bg-gray a:hover,
+header.bg-gray nav a:hover {
+  background: #7a7a7a;
+}
+nav.bg-gray-dark li.active a, header.bg-gray-dark nav li.active a,
+nav.bg-gray-dark a.active,
+header.bg-gray-dark nav a.active,
+nav.bg-gray-dark a:active,
+header.bg-gray-dark nav a:active,
+nav.bg-gray-dark a:hover,
+header.bg-gray-dark nav a:hover {
+  background: #3e3e3e;
+}
+nav.bg-primary li.active a, header.bg-primary nav li.active a,
+nav.bg-primary a.active,
+header.bg-primary nav a.active,
+nav.bg-primary a:active,
+header.bg-primary nav a:active,
+nav.bg-primary a:hover,
+header.bg-primary nav a:hover {
+  background: #0e44a3;
+}
+nav.bg-secondary li.active a, header.bg-secondary nav li.active a,
+nav.bg-secondary a.active,
+header.bg-secondary nav a.active,
+nav.bg-secondary a:active,
+header.bg-secondary nav a:active,
+nav.bg-secondary a:hover,
+header.bg-secondary nav a:hover {
+  background: #7a7a7a;
+}
+nav.bg-success li.active a, header.bg-success nav li.active a,
+nav.bg-success a.active,
+header.bg-success nav a.active,
+nav.bg-success a:active,
+header.bg-success nav a:active,
+nav.bg-success a:hover,
+header.bg-success nav a:hover {
+  background: #44a30e;
+}
+nav.bg-info li.active a, header.bg-info nav li.active a,
+nav.bg-info a.active,
+header.bg-info nav a.active,
+nav.bg-info a:active,
+header.bg-info nav a:active,
+nav.bg-info a:hover,
+header.bg-info nav a:hover {
+  background: #5ab5ba;
+}
+nav.bg-warning li.active a, header.bg-warning nav li.active a,
+nav.bg-warning a.active,
+header.bg-warning nav a.active,
+nav.bg-warning a:active,
+header.bg-warning nav a:active,
+nav.bg-warning a:hover,
+header.bg-warning nav a:hover {
+  background: #c1aa3d;
+}
+nav.bg-danger li.active a, header.bg-danger nav li.active a,
+nav.bg-danger a.active,
+header.bg-danger nav a.active,
+nav.bg-danger a:active,
+header.bg-danger nav a:active,
+nav.bg-danger a:hover,
+header.bg-danger nav a:hover {
+  background: #a3220e;
+}
+nav.bg-light li.active a, header.bg-light nav li.active a,
+nav.bg-light a.active,
+header.bg-light nav a.active,
+nav.bg-light a:active,
+header.bg-light nav a:active,
+nav.bg-light a:hover,
+header.bg-light nav a:hover {
+  background: #cccccc;
+}
+nav.bg-dark li.active a, header.bg-dark nav li.active a,
+nav.bg-dark a.active,
+header.bg-dark nav a.active,
+nav.bg-dark a:active,
+header.bg-dark nav a:active,
+nav.bg-dark a:hover,
+header.bg-dark nav a:hover {
+  background: black;
 }
 
 header {
+  width: 100vw;
   z-index: 3;
+  position: relative;
+  flex-basis: 64px;
+  min-height: 64px;
 }
 header .container {
+  height: 100%;
+  flex-flow: column;
+  position: fixed;
+}
+@media only screen and (min-width: 700px) {
+  header .container {
+    align-items: center;
+    padding: 8px;
+    height: 64px;
+    flex-flow: row;
+    max-width: 97%;
+    position: relative;
+    justify-content: space-between;
+  }
+}
+header .site-head {
+  display: inline-flex;
   height: 64px;
   padding: 8px;
-}
-header .site-title {
-  display: inline-flex;
   align-items: center;
-  padding-right: 10px;
   justify-content: space-between;
 }
-header .site-title img {
+header .site-head .site-title {
+  height: auto;
+  margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+}
+header .site-head .site-title img {
   margin-right: 0.25em;
 }
+@media only screen and (min-width: 700px) {
+  header .site-head {
+    padding: 0;
+  }
+}
+header .site-head .btn-mobile {
+  width: 64px;
+  height: 64px;
+  display: none;
+  justify-content: center;
+  flex-flow: column;
+}
+@media only screen and (max-width: 700px) {
+  header .site-head .btn-mobile {
+    display: flex;
+  }
+}
+header nav {
+  font-size: larger;
+  transform: translateX(100%);
+}
+header nav.open {
+  transform: translateX(0);
+}
 header nav,
-header .header-right {
-  margin-left: auto;
+header nav ul {
+  height: 100%;
+  width: 100%;
+}
+header nav ul {
+  flex-flow: column;
+  align-items: stretch;
+}
+header nav li,
+header nav a {
+  height: 100%;
+  width: 100%;
+}
+header nav a {
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: inline-flex;
+}
+@media only screen and (min-width: 700px) {
+  header nav {
+    height: 64px;
+    font-size: unset;
+    transform: translateX(0);
+    width: auto;
+    margin-top: 0;
+  }
+  header nav ul {
+    flex-flow: row;
+    justify-content: flex-start;
+  }
+}
+@media only screen and (min-width: 700px) {
+  header .header-right,
+header nav {
+    margin-left: auto;
+  }
+}
+header h1 {
+  margin: 0;
+}
+
+body {
+  flex-flow: column;
+  align-items: stretch;
+}
+
+main {
+  flex-grow: 1;
+}
+
+header,
+main,
+footer {
+  flex-shrink: 1;
+}
+
+footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+footer .container {
+  padding: 30px;
+  text-align: center;
 }
 /*# sourceMappingURL=bcmc.min.css.map */

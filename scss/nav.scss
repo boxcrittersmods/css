@@ -1,7 +1,13 @@
 @import "./burger.scss";
-
 nav {
+	.b {
+		display: block;
+	}
+	display: inline-block;
+	text-align: center;
 	ul {
+		@extend %flex-inline;
+		align-items: stretch;
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
@@ -9,46 +15,144 @@ nav {
 
 	li {
 		a {
-			width: 100%;
-			height: 100%;
-
-			&:hover {
-				@include bgColor("dark");
-			}
-		}
-
-		&.active a,
-		a.active {
-			@include bgColor("success");
+			@extend %btn;
+			// display: block;
+			line-height: 100%;
 		}
 	}
-	&.hor {
-		li {
-			display: inline;
+	&.nav-vertical {
+		ul {
+			flex-flow: column;
+		}
+	}
+
+	@each $name, $color in $all-colors {
+		&.bg-#{$name} {
+			li.active a,
+			a.active,
+			a:active,
+			a:hover {
+				@include hover($color);
+			}
 		}
 	}
 }
 
 header {
+	width: 100vw;
 	z-index: z("site-header");
-	.container {
-		height: $headerHeight;
-		padding: $headerPadding;
+	position: relative;
+	flex-basis: $headerHeight;
+	min-height: $headerHeight;
 
-		@extend %flex;
-	}
-	.site-title {
-		display: inline-flex;
-		align-items: center;
-		padding-right: 10px;
-		justify-content: space-between;
-		img {
-			margin-right: 0.25em;
+	@each $name, $value in $all-colors {
+		&.bg-#{$name} {
+			nav {
+				@extend .bg-#{$name};
+			}
 		}
 	}
 
-	nav,
-	.header-right {
-		margin-left: auto;
+	.container {
+		@extend .row;
+		height: 100%;
+		flex-flow: column;
+		//`z-index: 5;
+		position: fixed;
+		@include mq {
+			align-items: center;
+			padding: $headerPadding;
+			height: $headerHeight;
+			flex-flow: row;
+			max-width: 97%;
+			position: relative;
+			justify-content: space-between;
+		}
+	}
+	.site-head {
+		display: inline-flex;
+		height: $headerHeight;
+		padding: $headerPadding;
+		align-items: center;
+		.site-title {
+			height: auto;
+			margin-right: auto;
+			display: inline-flex;
+			align-items: center;
+			//padding-right: 10px;
+			img {
+				margin-right: 0.25em;
+			}
+		}
+		justify-content: space-between;
+
+		@include mq {
+			padding: 0;
+		}
+
+		.btn-mobile {
+			@extend %burgerContainer;
+			width: $headerHeight;
+			height: $headerHeight;
+			display: none;
+			justify-content: center;
+			flex-flow: column;
+			@include mq(mobile) {
+				display: flex;
+			}
+		}
+	}
+	nav {
+		font-size: larger;
+		transform: translateX(100%);
+		&.open {
+			transform: translateX(0);
+		}
+		&,
+		ul {
+			height: 100%;
+			width: 100%;
+		}
+		ul {
+			flex-flow: column;
+			align-items: stretch;
+		}
+		li,
+		a {
+			height: 100%;
+			width: 100%;
+		}
+		a {
+			@include center;
+			display: inline-flex;
+		}
+		@include mq {
+			height: $headerHeight;
+			font-size: unset;
+			transform: translateX(0);
+			ul {
+				flex-flow: row;
+				justify-content: flex-start;
+			}
+			width: auto;
+			//height: auto;
+			margin-top: 0;
+		}
+	}
+	@include mq {
+		.header-right,
+		nav {
+			margin-left: auto;
+		}
+	}
+
+	@each $name, $color in $all-colors {
+		&.bg-#{$name} nav {
+			@extend .bg-#{$name};
+		}
+	}
+
+	h1 {
+		margin: 0;
 	}
 }
