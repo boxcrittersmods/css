@@ -1,6 +1,14 @@
 %btn {
-	height: 48px;
-	padding: 16px;
+	$btnHeight:48;
+	$btnHor:16;
+	$btnVir:($btnHeight - 16)/2;
+	height: #{$btnHeight}px;
+	padding: {
+		left:#{$btnHor}px;
+		right:#{$btnHor}px;
+		top:#{$btnVir}px;
+		bottom:#{$btnVir}px;
+	};
 	display: block;
 
 	@each $name, $color in $all-colors {

@@ -7,6 +7,12 @@
 	font-family: Arial, Helvetica, sans-serif;
 	color: inherit;
 }
+
+html,
+body {
+	width: 100vw;
+	height: 100vh;
+}
 a {
 	color: var(--color-blue);
 	&,
@@ -17,8 +23,20 @@ a {
 	}
 }
 
-html,
-body {
-	width: 100vw;
-	height: 100vh;
+
+@mixin hide {
+	@include absolute($top:-9999px,$left:-9999px,$important:true);	
+}
+.hide {
+	@include hide;
+	@include mq(mobile) {
+		&-mobile {
+			@include hide;
+		}
+	}
+	@include mq(desktop) {
+		&-desktop {
+			@include hide;
+		}
+	}
 }

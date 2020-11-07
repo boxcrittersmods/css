@@ -1,5 +1,7 @@
 @import "./burger.scss";
-nav {
+
+nav,
+.nav {
 	.b {
 		display: block;
 	}
@@ -55,10 +57,9 @@ header {
 
 	.container {
 		@extend .row;
-		height: 100%;
 		flex-flow: column;
-		//`z-index: 5;
-		position: fixed;
+		// //`z-index: 5;
+		// position: fixed;
 		@include mq {
 			align-items: center;
 			padding: $headerPadding;
@@ -90,26 +91,24 @@ header {
 			padding: 0;
 		}
 
-		.btn-mobile {
+		.btn {
 			@extend %burgerContainer;
 			width: $headerHeight;
 			height: $headerHeight;
-			display: none;
+			display: flex;
 			justify-content: center;
 			flex-flow: column;
-			@include mq(mobile) {
-				display: flex;
-			}
 		}
 	}
-	nav {
+	nav,
+	.nav {
 		font-size: larger;
-		transform: translateX(100%);
-		&.open {
-			transform: translateX(0);
-		}
+		@include fixed($top: $headerHeight);
+
 		&,
-		ul {
+		ul,
+		li,
+		a {
 			height: 100%;
 			width: 100%;
 		}
@@ -117,31 +116,30 @@ header {
 			flex-flow: column;
 			align-items: stretch;
 		}
-		li,
-		a {
-			height: 100%;
-			width: 100%;
-		}
 		a {
 			@include center;
 			display: inline-flex;
 		}
 		@include mq {
+			&.nav-header {
+				@include position;
+			}
+
 			height: $headerHeight;
 			font-size: unset;
-			transform: translateX(0);
+			@include relative;
 			ul {
 				flex-flow: row;
 				justify-content: flex-start;
 			}
 			width: auto;
-			//height: auto;
 			margin-top: 0;
 		}
 	}
 	@include mq {
 		.header-right,
-		nav {
+		nav,
+		.nav {
 			margin-left: auto;
 		}
 	}
