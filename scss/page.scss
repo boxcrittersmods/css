@@ -14,12 +14,21 @@ footer {
 	flex-shrink: 1;
 }
 
-footer {
+footer,
+[class^="footer"] {
 	right: 0;
 	bottom: 0;
 	left: 0;
+	text-align: center;
 	.container {
-		padding: 30px;
-		text-align: center;
+		padding: 0.7em;
+	}
+	&.footer {
+		&-lg .container {
+			padding: 1.5em;
+		}
+		&-sm .container {
+			padding: 0.1em;
+		}
 	}
 }
