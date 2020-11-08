@@ -82,7 +82,6 @@ nav,
 header {
 	position: sticky;
 	top: 0;
-	width: 100vw;
 	z-index: z("site-header");
 	flex-basis: $headerHeight;
 	min-height: $headerHeight;
