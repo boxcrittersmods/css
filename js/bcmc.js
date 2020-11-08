@@ -38,23 +38,14 @@
 
 	let links = {
 		Mods: "https://boxcrittersmods.ga/mods",
-		Shader: "https://boxcrittersmods.ga/shaders",
+		"Texture Packs": "https://boxcrittersmods.ga/texturepacks",
+		"Shader Packs": "https://boxcrittersmods.ga/shaders",
 		Docs: "https://docs.boxcrittersmods.ga",
-		API: "https://docs.boxcrittersmods.ga",
-		Toolbox: "https://docs.boxcrittersmods.ga"
+		API: "https://api.boxcrittersmods.ga",
+		SDK: "https://sdk.boxcrittersmods.ga",
+		Toolbox: "https://toolbox.boxcrittersmods.ga"
 	};
 
-	/*
-	ocument.write(`
-<ul>
-${(() => {
-		let list; for (const name in links) {
-			list += `<li><a href="${links[name]}">${name}</a></li>`;
-		}
-		return list;
-	})()}
-</ul>`);
-	*/
 
 	function setupBcmcMenu() {
 		let menuElm = document.createElement("ul");
