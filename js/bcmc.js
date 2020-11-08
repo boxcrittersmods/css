@@ -63,6 +63,7 @@ ${(() => {
 			let item = document.createElement("li"),
 				link = document.createElement("a");
 			item.appendChild(link);
+			menuElm.appendChild(item);
 			link.innerText = name;
 			link.href = links[name];
 		}
