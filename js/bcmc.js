@@ -44,10 +44,28 @@
 		Toolbox: "https://docs.boxcrittersmods.ga"
 	};
 
+	/*
+	ocument.write(`
+<ul>
+${(() => {
+		let list; for (const name in links) {
+			list += `<li><a href="${links[name]}">${name}</a></li>`;
+		}
+		return list;
+	})()}
+</ul>`);
+	*/
+
 	function setupBcmcMenu() {
-
+		let menuElm = document.createElement("ul");
+		document.getElementById("bcmc-menu").appendChild(menuElm);
+		for (const name in links) {
+			let item = document.createElement("li"),
+				link = document.createElement("a");
+			item.appendChild(link);
+			link.innerText = name;
+			link.href = links[name];
+		}
 	}
-
-
-
+	setupBcmcMenu();
 })();
