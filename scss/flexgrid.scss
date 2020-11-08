@@ -33,12 +33,6 @@
 	}
 }
 
-.container {
-	@include centerBlock;
-	max-width: 100%;
-	width: $contentWidth;
-}
-
 .row {
 	@extend %flex;
 

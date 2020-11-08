@@ -1,14 +1,11 @@
-%btn {
-	$btnHeight:48;
-	$btnHor:16;
-	$btnVir:($btnHeight - 16)/2;
+$btnHeight: 48;
+$btnHor: 16;
+$btnVir: ($btnHeight - 16)/2;
+
+%btnBase {
+	cursor: pointer;
 	height: #{$btnHeight}px;
-	padding: {
-		left:#{$btnHor}px;
-		right:#{$btnHor}px;
-		top:#{$btnVir}px;
-		bottom:#{$btnVir}px;
-	};
+
 	display: block;
 
 	@each $name, $color in $all-colors {
@@ -18,10 +15,31 @@
 	}
 }
 
+%btn {
+	@extend %btnBase;
+	padding: {
+		left: #{$btnHor}px;
+		right: #{$btnHor}px;
+		top: #{$btnVir}px;
+		bottom: #{$btnVir}px;
+	}
+}
+%btnBorder {
+	border: {
+		radius: 1em;
+	}
+	border-style: solid;
+	border-color: rgba($color: #888888, $alpha: 0.3);
+}
+
 .btn {
 	display: inline-block;
 	@extend %btn;
-	border: {
-		radius: 20px;
-	}
+	@extend %btnBorder;
+}
+
+.toggler {
+	display: inline-block;
+	@extend %btnBase;
+	@extend %btnBorder;
 }

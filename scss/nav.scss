@@ -2,6 +2,10 @@
 
 nav,
 .nav {
+	border: {
+		radius: 1em;
+	}
+
 	.b {
 		display: block;
 	}
@@ -14,17 +18,52 @@ nav,
 		margin: 0;
 		padding: 0;
 	}
-
 	li {
+		border: inherit;
 		a {
 			@extend %btn;
 			// display: block;
 			line-height: 100%;
+			border-radius: 1em;
 		}
+		// &:first-child a {
+		// 	border: {
+		// 		top-left-radius: 1em;
+		// 		top-right-radius: 0;
+		// 		bottom-left-radius: 1em;
+		// 		bottom-right-radius: 0;
+		// 	}
+		// }
+
+		// &:last-child a {
+		// 	border: {
+		// 		top-left-radius: 0;
+		// 		top-right-radius: 1em;
+		// 		bottom-left-radius: 0;
+		// 		bottom-right-radius: 1em;
+		// 	}
+		// }
 	}
+
 	&.nav-vertical {
 		ul {
 			flex-flow: column;
+		}
+
+		li {
+			&:first-child a {
+				border: {
+					top-right-radius: 1em;
+					bottom-left-radius: 0;
+				}
+			}
+
+			&:last-child a {
+				border: {
+					top-right-radius: 0;
+					bottom-left-radius: 1em;
+				}
+			}
 		}
 	}
 
@@ -41,16 +80,28 @@ nav,
 }
 
 header {
+	position: sticky;
+	top: 0;
 	width: 100vw;
 	z-index: z("site-header");
-	position: relative;
 	flex-basis: $headerHeight;
 	min-height: $headerHeight;
+
+	.btn,
+	.toggler {
+		background-color: rgba($color: #ffffff, $alpha: 0.1);
+	}
 
 	@each $name, $value in $all-colors {
 		&.bg-#{$name} {
 			nav {
 				@extend .bg-#{$name};
+			}
+			.btn,
+			.toggler {
+				&:hover {
+					@include hover($value);
+				}
 			}
 		}
 	}
@@ -58,15 +109,14 @@ header {
 	.container {
 		@extend .row;
 		flex-flow: column;
+		position: relative;
 		// //`z-index: 5;
-		// position: fixed;
 		@include mq {
 			align-items: center;
 			padding: $headerPadding;
 			height: $headerHeight;
 			flex-flow: row;
 			max-width: 97%;
-			position: relative;
 			justify-content: space-between;
 		}
 	}
@@ -75,6 +125,7 @@ header {
 		height: $headerHeight;
 		padding: $headerPadding;
 		align-items: center;
+		position: relative;
 		.site-title {
 			height: auto;
 			margin-right: auto;
@@ -83,6 +134,11 @@ header {
 			//padding-right: 10px;
 			img {
 				margin-right: 0.25em;
+				&.toggler {
+					padding: 8px;
+					width: $headerHeight;
+					height: $headerHeight;
+				}
 			}
 		}
 		justify-content: space-between;
@@ -103,9 +159,9 @@ header {
 	nav,
 	.nav {
 		font-size: larger;
-		@include fixed($top: $headerHeight);
+		@include fixed($top: $headerHeight, $bottom: 0);
 
-		&,
+		width: 100%;
 		ul,
 		li,
 		a {
@@ -121,11 +177,24 @@ header {
 			display: inline-flex;
 		}
 		@include mq {
+			bottom: auto;
 			&.nav-header {
+				border-radius: 0;
 				@include position;
 			}
 
-			height: $headerHeight;
+			&.nav-dropdown {
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+				height: auto;
+				@include fixed;
+				ul {
+					flex-flow: column;
+				}
+				//@include fixed($top: $headerHeight, $left: 0);
+			}
+
+			//height: $headerHeight;
 			font-size: unset;
 			@include relative;
 			ul {
@@ -138,8 +207,7 @@ header {
 	}
 	@include mq {
 		.header-right,
-		nav,
-		.nav {
+		.nav-header {
 			margin-left: auto;
 		}
 	}

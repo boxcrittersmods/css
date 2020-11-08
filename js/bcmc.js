@@ -11,17 +11,19 @@
 		cdEnded = false;
 		setTimeout(() => { console.debug("Toggle cooldown finished."); cdEnded = true; }, cooldown);
 		console.debug("Hello I am", this);
-		let { toggleTarget, toggleClass, toggleSelf } = this.dataset;
-		console.debug({ toggleTarget, toggleClass, toggleSelf });
-		if (void 0 !== toggleSelf) {
-			this.classList.toggle(toggleSelf);
+		let data = this.dataset;
+		if (void 0 !== data.toggleSelf) {
+			this.classList.toggle(data.toggleSelf);
 		}
-		if (void 0 == toggleTarget) return;
-		let target = document.querySelector(toggleTarget);
+		if (void 0 !== data.toggleBody) {
+			document.body.classList.toggle(data.toggleBody);
+		}
+		if (void 0 == data.toggleTarget) return;
+		let target = document.querySelector(data.toggleTarget);
 		if (void 0 == target) return;
 		console.debug("Target:", target);
-		if (void 0 !== toggleClass) {
-			target.classList.toggle(toggleClass);
+		if (void 0 !== data.toggleClass) {
+			target.classList.toggle(data.toggleClass);
 		}
 
 	}

@@ -13,21 +13,27 @@
 	<header class="bg-green text-white">
 		<div class="container">
 			<div class="site-head">
-				<h1 class="site-title"><img src="https://res.boxcrittersmods.ga/bcmc-white-logo.png"
-						alt="Box Critters Modding Community">CSS
+				<h1 class="site-title"><img class="toggler" src="https://res.boxcrittersmods.ga/bcmc-white-logo.png"
+						alt="Box Critters Modding Community" data-toggle-target="#bcmc-menu" data-toggle-class="hide">
+					<a href="/">CSS</a>
 				</h1>
-				<a href="#" class="btn hide-desktop toggler">
+				<a href="#" class="btn hide-desktop toggler" data-toggle-self="open" data-toggle-target="#site-menu"
+					data-toggle-class="hide-mobile">
 					<div class="burger"></div>
 				</a>
+
 			</div>
-			<nav class="hide">
+			<nav id="bcmc-menu" class="hide nav-dropdown">
 				<ul>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
+					<li><a href="https://boxcrittersmods.ga/mods">Mods</a></li>
+					<li><a href="https://boxcrittersmods.ga/texture-packs">Texture Packs</a></li>
+					<li><a href="https://boxcrittersmods.ga/shaders">Shaders</a></li>
+					<li><a href="https://docs.boxcrittersmods.ga">Docs</a></li>
+					<li><a href="https://api.boxcrittersmods.ga">API</a></li>
+					<li><a href="https://toolbox.boxcrittersmods.ga">Toolbox</a></li>
 				</ul>
 			</nav>
-			<nav class="hide-mobile nav-header">
+			<nav id="site-menu" class="hide-mobile nav-header">
 				<ul>
 					<li class="active"><a href="#">Option 1</a></li>
 					<li><a href="#">Option 2</a></li>

@@ -4,8 +4,16 @@ body {
 	align-items: stretch;
 }
 
+.container {
+	@include centerBlock;
+	max-width: 100%;
+	width: $contentWidth;
+}
 main {
 	flex-grow: 1;
+	.container {
+		padding: 8px;
+	}
 }
 
 header,
