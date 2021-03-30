@@ -37,13 +37,13 @@
 	setupTogglers();
 
 	let links = {
-		Mods: "https://boxcrittersmods.ga/mods",
-		"Texture Packs": "https://boxcrittersmods.ga/texturepacks",
-		"Shader Packs": "https://boxcrittersmods.ga/shaders",
-		Docs: "https://docs.boxcrittersmods.ga",
-		API: "https://api.boxcrittersmods.ga",
-		SDK: "https://sdk.boxcrittersmods.ga",
-		Toolbox: "https://toolbox.boxcrittersmods.ga"
+		Mods: "https://bcmc.ga/mods",
+		"Texture Packs": "https://bcmc.ga/texturepacks",
+		"Shader Packs": "https://bcmc.ga/shaders",
+		Docs: "https://docs.bcmc.ga",
+		API: "https://api.bcmc.ga",
+		SDK: "https://sdk.bcmc.ga",
+		Toolbox: "https://toolbox.bcmc.ga"
 	};
 
 

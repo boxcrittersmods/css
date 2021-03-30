@@ -1,7 +1,7 @@
 <header class="bg-green text-white">
 	<div class="container">
 		<div class="site-head">
-			<h1 class="site-title"><img class="toggler" src="https://res.boxcrittersmods.ga/bcmc-white-logo.png"
+			<h1 class="site-title"><img class="toggler" src="https://res.bcmc.ga/bcmc-white-logo.png"
 					alt="Box Critters Modding Community" data-toggle-target="#bcmc-menu" data-toggle-class="hide">
 				<a href="/">CSS</a>
 			</h1>
@@ -17,6 +17,6 @@
 </main>
 <footer class="bg-green">
 	<div class="container">
-		<script src="https://res.boxcrittersmods.ga/footer.js"></script>
+		<script src="https://res.bcmc.ga/footer.js"></script>
 	</div>
 </footer>
